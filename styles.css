@@ -1,0 +1,166 @@
+
+body {
+    font-family: Montserrat;
+    font-size: 1.2rem;
+    color: black;
+}
+
+
+h2 {
+    font-family: "Montserrat";
+    font-size: 1.8rem;
+    color: black;
+}
+
+.container-fluid {
+    padding: 5%;
+}
+
+/* Sections */
+
+.colored-section {
+    background-color: #D3E4CD;
+}
+
+.white-section {
+    background-color: #fff;
+}
+
+.colored2-section {
+    background-color: #3E7C17;
+}
+
+/* Navigation Bar */
+
+.navbar {
+    padding: 1rem 5rem 1rem 5rem;
+    background-color: white;
+
+}
+
+.navbar-brand {
+    font-family: "Montserrat";
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: black !important;
+}
+
+.nav-item {
+    padding: 0 18px;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    font-family: "Montserrat";
+    font-weight: 300;
+    color: black !important;
+}
+
+/* Title Section */
+
+.big-heading {
+    padding: 6rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.search-bar {
+   text-align: center;
+   padding: 2% 2% 2% 2%;
+   margin-left: 25%;
+   margin-bottom: 10%;
+   width: 400px;
+   height: 75px;
+   border: #D3E4CD;
+}
+
+.search-window {
+    text-align: center;
+    width: 400px;
+    height: 70px;
+    border: #D3E4CD;
+}
+
+/* Carousel */
+
+.carousel-items {
+    height: 500px;
+    width: 900px;
+    object-fit: cover;
+}
+
+#title-carousel {
+    height: 500px;
+    width: 900px;
+}
+
+/* About Section */
+
+.about-image {
+    height: 500px;
+    width: 900px;
+    object-fit: contain;
+    border-radius: 10%;
+    margin-top: 30px;
+}
+
+#about {
+    text-align: center;
+}
+
+.about-wrapper {
+    padding: 10%;
+    background-color: white;
+}
+
+/* Features Section*/
+
+.feature-title {
+    font-size: 1.5rem;
+}
+
+.icon {
+    color: #D3E4CD;
+    margin-bottom: 1rem;
+}
+
+.icon:hover {
+    color: #3E7C17;
+}
+
+/* Contact Section */
+
+.contact-wrapper {
+    text-align: center;
+    padding: 2%;
+    color: white;
+}
+
+.contact-title {
+    font-size: 2.5rem;
+    color: white;
+}
+
+/* Footer Section */
+
+.social-icon {
+    margin: 20px 10px;
+}
+
+#footer {
+    text-align: center;
+}
+
+.footer-credit {
+    margin: 20px 10px;
+}
+
+@media (max-width: 1028px) {
+    #title {
+        text-align: center;
+    }
+    .title-image {
+        position: static;
+        transform: rotate(0);
+    }
+}
