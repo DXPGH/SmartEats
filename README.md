@@ -1,2 +1,2 @@
 # SmartEats
-Recipe Website Utilizing Spoonacular
+Recipe Website
