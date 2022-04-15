@@ -62,7 +62,7 @@ function generateRecipesHTML(results){
         <div class="col item">
           <img src="${result.image}" alt="">
           <div class="recipe-description">
-            <h2 class="recipe-title">${result.title}</h2>
+            <h2 class="recipe-title">${truncate(result.title, 24)}</h2>
           </div>
           <button onclick="generateModalHTML('${result.sourceUrl}')" type="button" class="btn btn-lg recipe-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">View Recipe</button>
         </div>
