@@ -69,6 +69,7 @@ h2 {
     color: white;
     width: 400px;
     height: auto;
+    margin-bottom: 2rem;
 }
 
 .search-window {
@@ -76,20 +77,6 @@ h2 {
     width: 400px;
     height: 70px;
     border: #D3E4CD;
-}
-
-/* Carousel */
-
-.carousel-items {
-    height: 500px;
-    width: 900px;
-    object-fit: cover;
-
-}
-
-#title-carousel {
-    height: 500px;
-    max-width: 900px;
 }
 
 /* Random Recipes */
@@ -104,9 +91,7 @@ h2 {
 
 .about-image {
     max-height: 500px;
-    max-width: 900px;
-    object-fit: cover;
-    border-radius: 10%;
+    width: 100%;
     margin-top: 30px;
     margin-bottom: 5%;
     padding: 1%;
@@ -210,7 +195,6 @@ h2 {
 .item img {
     height: 294px;
     border-radius: 4px;
-
 }
 
 .item .recipe-title {
@@ -228,6 +212,45 @@ h2 {
 .filtering {
     padding: 2rem;
 }
+
+/* Carousel */
+
+.carousel-item {
+    height: 500px;
+    padding: 15x;
+}
+
+.carousel-item img {
+    display: block;
+    width: 100%;
+    margin: auto;
+}
+
+#title-carousel {
+    height: auto;
+    max-width: 900px;
+}
+
+/* Random Recipes Section */
+
+.ritem {
+    width: 100%;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.ritem img {
+    height: 200px;
+    border-radius: 4px;
+
+}
+
+.ritem .recipe-title {
+    margin: 20px 10px 0 0;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
 
 /* Modals */
 

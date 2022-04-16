@@ -8,7 +8,7 @@ const container = document.querySelector('.container');
 const modalBodyDiv = document.querySelector('.modal-body');
 const modalFooterDiv = document.querySelector('.modal-footer');
 const randomRecipesDiv = document.querySelector('.random-result');
-const n = 23;
+
 let restrictions = '';
 let searchQuery = '';
 
@@ -28,7 +28,7 @@ searchForm.addEventListener('submit', (e) => {
 }) 
 }
 
-fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=10', options)
+fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=9', options)
 	.then(response => response.json())
 	.then(data => {
         console.log(data);
@@ -59,7 +59,7 @@ function generateRecipesHTML(results){
     results.map(result => {
         generatedRecipesHTML +=
         `
-        <div class="col item">
+        <div class="col ritem">
           <img src="${result.image}" alt="">
           <div class="recipe-description">
             <h2 class="recipe-title">${truncate(result.title, 24)}</h2>
