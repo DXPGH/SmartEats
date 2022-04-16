@@ -65,9 +65,8 @@ h2 {
 }
 
 .search-btn {
-    background-color: #3E7C17;
-    color: white;
-    width: 400px;
+    color: black;
+    width: auto;
     height: auto;
     margin-bottom: 2rem;
 }
@@ -163,7 +162,7 @@ h2 {
 .search-page-bar {
     text-align: center;
     padding: 2% 2% 2% 2%;
-    width: 265px;
+    width: 350px;
     height: 75px;
     border: #D3E4CD;
     right: 20px;
@@ -181,8 +180,7 @@ h2 {
 }
 
 .filters-btn {
-    background-color: #3E7C17;
-    color: white;
+    color: black;
     margin-top: 2rem;
 }
 
@@ -204,7 +202,6 @@ h2 {
 }
 
 .recipe-btn {
-    background-color: #3E7C17;
     color: white;
     margin-top: 10px;
 }

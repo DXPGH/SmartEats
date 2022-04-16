@@ -64,7 +64,7 @@ function generateRecipesHTML(results){
           <div class="recipe-description">
             <h2 class="recipe-title">${truncate(result.title, 24)}</h2>
           </div>
-          <button onclick="generateModalHTML('${result.sourceUrl}')" type="button" class="btn btn-lg recipe-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">View Recipe</button>
+          <button onclick="generateModalHTML('${result.sourceUrl}')" type="button" class="btn btn-sm recipe-btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">View Recipe</button>
         </div>
         `
     })
@@ -81,7 +81,7 @@ function generateSearchHTML(results){
           <div class="recipe-description">
             <h2 class="recipe-title">${truncate(result.recipe.label, 24)}</h2>
           </div>
-          <button onclick="generateModalHTML('${result.recipe.url}')" type="button" class="btn btn-lg recipe-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">View Recipe</button>
+          <button onclick="generateModalHTML('${result.recipe.url}')" type="button" class="btn btn-sm recipe-btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">View Recipe</button>
         </div>
         `
     })
