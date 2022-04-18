@@ -193,8 +193,17 @@ h2 {
 }
 
 .recipe-btn {
+    display: inline-block;
     color: white;
     margin-top: 10px;
+    width: 30%;
+}
+
+.recipe-site-btn {
+    display: inline-block;
+    margin-top: 10px;
+    color: white;
+    width: 35%;
 }
 
 .filtering {
@@ -243,7 +252,14 @@ h2 {
 /* Modals */
 
 .modal-dialog {
-    right: 39rem !important;
+    right: 32rem;
+    top: 1rem;
+}
+
+iframe {
+    width: 1500px; 
+    height: 600px; 
+    overflow: auto;
 }
 
 .modal-content {
@@ -251,6 +267,11 @@ h2 {
     width: fit-content;
     position: fixed;
 }
+
+.modal-div {
+    width: 100%;
+}
+
 
 /* Search-bar and Autocomplete */
 
@@ -289,7 +310,6 @@ h2 {
     counter-reset: #644bff;
 }
 
-
 .search-input .autocom-box {
     /* padding: 10px 8px; */
     max-height: 280px;
@@ -323,6 +343,18 @@ h2 {
 
 /* Media */
 
+@media screen and (max-width: 1700px) {
+    .modal-dialog {
+        right: 17rem;
+    }
+
+    iframe {
+        width: 1000px; 
+        height: 700px; 
+        overflow: auto;
+    }
+}
+
 @media screen and (max-width: 1400px) {
     .checkbox-grid li {
         display: block;
@@ -331,8 +363,42 @@ h2 {
     }
 }
 
+@media screen and (max-width: 1200px) {
+    .modal-dialog {
+        right: 8rem;
+    }
+
+    iframe {
+        width: 700px; 
+        height: 500px; 
+        overflow: auto;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .modal-dialog {
+        right: -1rem;
+    }
+
+    iframe {
+        width: 400px; 
+        height: 500px; 
+        overflow: auto;
+    }
+}
+
 @media screen and (max-width: 500px) {
     .checkbox-grid li{
         width: 100%;
+    }
+
+    .modal-dialog {
+        right: -1rem;
+    }
+
+    iframe {
+        width: 300px; 
+        height: 400px; 
+        overflow: auto;
     }
 }

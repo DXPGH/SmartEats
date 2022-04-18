@@ -1,7 +1,5 @@
 //Javascript
-//import {MY_API_KEY} from './config.js';
 
-//const homeSearchForm = document.querySelector('')
 const searchForm = document.querySelector('form');
 const searchResultDiv = document.querySelector('.search-result');
 const container = document.querySelector('.container');
@@ -31,10 +29,9 @@ searchForm.addEventListener('submit', (e) => {
 }) 
 }
 
-fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=9', options)
+fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=4', options)
 	.then(response => response.json())
 	.then(data => {
-        console.log(data);
         const rinfo = data;
         generateRecipesHTML(rinfo.recipes);
     })
@@ -53,7 +50,6 @@ async function fetchRecipes () {
 .then(data => {
     const info = data;
     generateSearchHTML(info.hits);
-    console.log(data);
 })
 }
 
@@ -65,9 +61,10 @@ function generateRecipesHTML(results){
         <div class="col ritem">
           <img src="${result.image}" alt="">
           <div class="recipe-description">
-            <h2 class="recipe-title">${truncate(result.title, 24)}</h2>
+            <h2 class="recipe-title">${truncate(result.title, 22)}</h2>
           </div>
           <button onclick="generateModalHTML('${result.sourceUrl}')" type="button" class="btn btn-sm recipe-btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">View Recipe</button>
+          <a class="btn btn-sm btn-primary recipe-site-btn" href="${result.sourceUrl}" target="_blank">Recipe Website</a>
         </div>
         `
     })
@@ -82,9 +79,10 @@ function generateSearchHTML(results){
         <div class="col item">
           <img src="${result.recipe.image}" alt="">
           <div class="recipe-description">
-            <h2 class="recipe-title">${truncate(result.recipe.label, 24)}</h2>
+            <h2 class="recipe-title">${truncate(result.recipe.label, 22)}</h2>
           </div>
           <button onclick="generateModalHTML('${result.recipe.url}')" type="button" class="btn btn-sm recipe-btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">View Recipe</button>
+          <a class="btn btn-sm btn-primary recipe-site-btn" href="${result.recipe.url}" target="_blank">Recipe Website</a>
         </div>
         `
     })
@@ -97,7 +95,7 @@ function generateModalHTML(url){
     let generatedModalBodyHTML = '';
     generatedModalBodyHTML =
         `
-        <iframe src="${recipeURL}" height="700" width="1700"></iframe>  
+        <iframe src="${recipeURL}"></iframe>  
         `
     modalBodyDiv.innerHTML = generatedModalBodyHTML;
 
@@ -177,4 +175,3 @@ function showSuggestions(list) {
     }
     suggBox.innerHTML = listData;
 }
-
