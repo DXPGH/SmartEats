@@ -61,12 +61,22 @@
       <section class="colored-section">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-2">
-        <form>
-          <input class="search-page-bar" type="text" placeholder="Search...">
-        </form>
-        </div>
-        <div class="col-10-lg  filtering">
+          <div class="col-4-lg search-wrapper">
+            <div class="search-input">
+              <form>
+                <input id="autocomplete"class="search-page-bar" type="text" placeholder="Search...">
+              </form>
+              <div class="autocom-box">
+                <li>a</li>
+                <li>b</li>
+                <li>c</li>
+                <li>d</li>
+                <li>e</li>
+              </div>
+              <div class="icon"><i class="fas fa-search"></i></div>
+            </div>
+          </div>
+        <div class="col-8-lg filtering">
           <ul class="checkbox-grid">
             <li><input type="checkbox" name="restrictions" value="alcohol-free" /><label class="label" for="restrictions">Alcohol-Free</label></li>
             <li><input type="checkbox" name="restrictions" value="balanced"/><label class="label" for="restrictions">Balanced</label></li>

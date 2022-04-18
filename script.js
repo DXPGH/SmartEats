@@ -8,6 +8,9 @@ const container = document.querySelector('.container');
 const modalBodyDiv = document.querySelector('.modal-body');
 const modalFooterDiv = document.querySelector('.modal-footer');
 const randomRecipesDiv = document.querySelector('.random-result');
+const searchWrapper = document.querySelector(".search-input")
+const inputBox = searchWrapper.querySelector("input");
+const suggBox = searchWrapper.querySelector(".autocom-box");
 
 let restrictions = '';
 let searchQuery = '';
@@ -35,7 +38,7 @@ fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/rando
         const rinfo = data;
         generateRecipesHTML(rinfo.recipes);
     })
-	.catch(err => console.error(err));
+
 
 async function fetchRecipes () {
 
@@ -124,3 +127,54 @@ function getCheckedCheckboxesFor(checkboxName) {
 function truncate(str, n) {
     return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
 }
+
+inputBox.onkeyup = (e) => {
+    console.log(e.target.value);
+    let acquery = e.target.value;
+    fetchAutocomplete(acquery);
+}
+
+function fetchAutocomplete (autocomplete) {
+    fetch(`https://api.edamam.com/auto-complete?app_id=2002a689&app_key=38af78e6450d87e0ad69d768be64cfa8&q=${autocomplete}&limit=10`)
+    .then(response => response.json())
+    .then(data => {
+        const acinfo = data;
+        generateAutoCompleteData(acinfo);
+    })
+}
+
+function generateAutoCompleteData (autocompleteData) {
+    let acArray = [];
+    if(autocompleteData) {
+        acArray = autocompleteData.map((data) => {
+            return data = '<li>' + data + '</li>';
+        });
+        console.log(acArray);
+        searchWrapper.classList.add("active");
+        showSuggestions(acArray);
+        let allList = suggBox.querySelectorAll("li");
+        for (let i = 0; i < allList.length; i++) {
+            //adding onclick attribute in all li tag
+            allList[i].setAttribute("onclick", "select(this)")
+        }
+    } else {
+        searchWrapper.classList.remove("active");
+    }
+}
+
+function select(element) {
+    let selectUserData = element.textContent;
+    inputBox.value = selectUserData;
+}
+
+function showSuggestions(list) {
+    let listData;
+    if(!list.length) {
+        acquery = inputBox.value;
+        listData = '<li>' + acquery + '</li>';
+    } else {
+        listData = list.join('');
+    }
+    suggBox.innerHTML = listData;
+}
+
