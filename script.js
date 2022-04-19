@@ -7,8 +7,6 @@ const modalBodyDiv = document.querySelector('.modal-body');
 const modalFooterDiv = document.querySelector('.modal-footer');
 const randomRecipesDiv = document.querySelector('.random-result');
 const searchWrapper = document.querySelector(".search-input")
-const inputBox = searchWrapper.querySelector("input");
-const suggBox = searchWrapper.querySelector(".autocom-box");
 
 let restrictions = '';
 let searchQuery = '';
@@ -29,11 +27,12 @@ searchForm.addEventListener('submit', (e) => {
 }) 
 }
 
-fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=4', options)
+fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=9', options)
 	.then(response => response.json())
 	.then(data => {
         const rinfo = data;
         generateRecipesHTML(rinfo.recipes);
+        console.log(rinfo);
     })
 
 
@@ -125,6 +124,9 @@ function getCheckedCheckboxesFor(checkboxName) {
 function truncate(str, n) {
     return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
 }
+
+const inputBox = searchWrapper.querySelector("input");
+const suggBox = searchWrapper.querySelector(".autocom-box");
 
 inputBox.onkeyup = (e) => {
     console.log(e.target.value);
