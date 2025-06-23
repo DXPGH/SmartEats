@@ -14,8 +14,8 @@ let searchQuery = '';
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
-		'X-RapidAPI-Key': '71941119eemsh8df4ce163e7bf67p1093dcjsn2a642fcae6dc'
+		'X-RapidAPI-Host': 'REDACTED',
+		'X-RapidAPI-Key': 'REDACTED'
 	}
 };
 
@@ -41,8 +41,8 @@ async function fetchRecipes () {
     fetch(`https://edamam-recipe-search.p.rapidapi.com/search?q=${searchQuery}&to=20${restrictions}`, {
 	"method": "GET",
 	"headers": {
-		"x-rapidapi-host": "edamam-recipe-search.p.rapidapi.com",
-		"x-rapidapi-key": "71941119eemsh8df4ce163e7bf67p1093dcjsn2a642fcae6dc"
+		"x-rapidapi-host": "REDACTED",
+		"x-rapidapi-key": "REDACTED"
 	}
 })
 .then(response => response.json())
